@@ -2,27 +2,41 @@ from datetime import datetime
 class Employee:
     """
     """
-    def __init__(self, first_name, middle_name, sur_name):
+    MIN_SALARY = 3000
+    def __init__(self, first_name, middle_name, sur_name, initial_salary, dob):
         """
         """
-        pass
+        self.first_name = first_name
+        self.middle_name = middle_name
+        self.sur_name = sur_name
+        self._salary = initial_salary
+        self._date_of_birth = dob
 
-    def salary_increament(self, increment):
+    def __str__(self):
+        return f"""
+        Employee
+        ___________________________
+        First name: {self.first_name}
+        Middle name: {self.middle_name}
+        Sur name: {self.sur_name}
+        salary: {self._salary}
         """
-        """
-        pass
+    def __repr__(self):
+        return(f'Employee("{self.first_name}", "{self.middle_name}", "{self.sur_name}", {self._salary})')
 
-    def leave_application(self, start_date, end_date, leave_type):
-        """
-        """
-        pass
+    @property
+    def salary(self):
+        return self._salary
 
-    def update_leave(self, leave_id):
-        """
-        """ 
-        pass
+    @property.setter
+    def salary(self,initial_salary):
+        if initial_salary<Employee.MIN_SALARY:
+            raise Exception("Salary less than minimum salary")
+        self._salary = initial_salary
 
-    def display_details(self):
-        """
-        """
-        pass
+    @classmethod
+    def increase_salary(cls):
+        return cls._salary*((100+cls._salary_percentage_increment)/100)
+
+    def get_age(self):
+        return datetime.now - self._date_of_birth

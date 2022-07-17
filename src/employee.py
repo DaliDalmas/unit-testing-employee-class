@@ -45,8 +45,8 @@ class Employee:
             raise Exception("Salary less than minimum salary")
         self._salary = initial_salary
 
-    def increase_salary(self):
-        return self._salary*((100+self._salary_percentage_increment)/100)
+    def increase_salary(self, increment: float):
+        return self._salary*((100+increment)/100)
 
     def get_age(self):
         return datetime.today().year - datetime.strptime(

@@ -4,7 +4,7 @@ from employee import Employee
 class Manager(Employee):
 
     def __init__(self, first_name: str, middle_name: str, sur_name: str, initial_salary: int, dob: str,
-                 role="manager", percentage_increment=5, team="admin"):
+                 role :str="manager", percentage_increment:int=5, team:str="admin"):
         self.role: str= role
         self._salary_percentage_increment: str = percentage_increment
         self.team: str = team
@@ -17,7 +17,7 @@ class Manager(Employee):
             sur_name,
             initial_salary,
             dob)
-        self._salary = Employee.increase_salary(self)
+        self._salary = Employee.increase_salary(self, self._salary_percentage_increment)
 
     @property
     def salary_percentage_increment(self):
@@ -29,7 +29,7 @@ class Manager(Employee):
             raise Exception("Invalid salary increment")
         self._salary_percentage_increment = percentage_increment
 
-    def create_budgegt_stats(
+    def create_budget_stats(
             self,
             prev_budget: float,
             prev_funding: float,
@@ -87,7 +87,7 @@ def main():
     print(f"The age of employee is {emp.get_age()}")
 
     print("Creating budget statistics")
-    print(emp.create_budgegt_stats(20000, 19000, 14569, 30000, 23140))
+    print(emp.create_budget_stats(20000, 19000, 14569, 30000, 23140))
 
 
 if __name__ == "__main__":

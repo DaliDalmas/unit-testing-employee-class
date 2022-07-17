@@ -3,12 +3,12 @@ from employee import Employee
 
 class Manager(Employee):
 
-    def __init__(self, first_name, middle_name, sur_name, initial_salary, dob,
+    def __init__(self, first_name: str, middle_name: str, sur_name: str, initial_salary: int, dob: str,
                  role="manager", percentage_increment=5, team="admin"):
-        self.role = role
-        self._salary_percentage_increment = percentage_increment
-        self.team = team
-        self.my_budget_stats = None
+        self.role: str= role
+        self._salary_percentage_increment: str = percentage_increment
+        self.team: str = team
+        self.my_budget_stats: dict = {}
 
         Employee.__init__(
             self,
@@ -24,18 +24,18 @@ class Manager(Employee):
         return self._salary_percentage_increment
 
     @salary_percentage_increment.setter
-    def salary_percentage_increment(self, percentage_increment):
+    def salary_percentage_increment(self, percentage_increment: float):
         if percentage_increment < 0:
             raise Exception("Invalid salary increment")
         self._salary_percentage_increment = percentage_increment
 
     def create_budgegt_stats(
             self,
-            prev_budget,
-            prev_funding,
-            prev_expenditure,
-            next_budget,
-            next_funding):
+            prev_budget: float,
+            prev_funding: float,
+            prev_expenditure: float,
+            next_budget: float,
+            next_funding: float):
 
         self.my_budget_stats = {
             "prev_budget": prev_budget,
@@ -78,13 +78,16 @@ class Manager(Employee):
 
 def main():
     print("Example employee class")
-    emp = Manager(
+    emp: Manager = Manager(
         "Dalmas", "DaliCodes", "Otieno",
         6000, "1992-03-23", "CTO", 50,
         "Technology")
 
     print(emp)
     print(f"The age of employee is {emp.get_age()}")
+
+    print("Creating budget statistics")
+    print(emp.create_budgegt_stats(20000, 19000, 14569, 30000, 23140))
 
 
 if __name__ == "__main__":

@@ -5,16 +5,16 @@ class Employee:
     """
     """
 
-    MIN_SALARY = 3000
+    MIN_SALARY: int = 3000
 
-    def __init__(self, first_name, middle_name, sur_name, initial_salary, dob):
+    def __init__(self, first_name: str, middle_name: str, sur_name: str, initial_salary: int, dob: str):
         """
         """
-        self.first_name = first_name
-        self.middle_name = middle_name
-        self.sur_name = sur_name
-        self._salary = initial_salary
-        self._date_of_birth = dob
+        self.first_name: str = first_name
+        self.middle_name: str = middle_name
+        self.sur_name: str = sur_name
+        self._salary: int = initial_salary
+        self._date_of_birth: str = dob
 
     def __str__(self):
         return f"""
@@ -40,7 +40,7 @@ class Employee:
         return self._salary
 
     @salary.setter
-    def salary(self, initial_salary):
+    def salary(self, initial_salary: int):
         if initial_salary < Employee.MIN_SALARY:
             raise Exception("Salary less than minimum salary")
         self._salary = initial_salary
@@ -56,7 +56,7 @@ class Employee:
 
 def main():
     print("Example employee class")
-    emp = Employee("Dalmas", "DaliCodes", "Otieno", 6000, "1992-03-23")
+    emp: Employee = Employee("Dalmas", "DaliCodes", "Otieno", 6000, "1992-03-23")
     print(emp)
     print(f"The age of employee is {emp.get_age()}")
 

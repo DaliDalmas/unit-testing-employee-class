@@ -1,8 +1,12 @@
-from datetime import datetime 
+from datetime import datetime
+
+
 class Employee:
     """
     """
+
     MIN_SALARY = 3000
+
     def __init__(self, first_name, middle_name, sur_name, initial_salary, dob):
         """
         """
@@ -25,14 +29,18 @@ class Employee:
         """
 
     def __repr__(self):
-        return(f'Employee("{self.first_name}", "{self.middle_name}", "{self.sur_name}", {self._salary}, {self._date_of_birth})')
+        return(f'Employee("{self.first_name}",\
+            "{self.middle_name}",\
+            "{self.sur_name}",\
+            {self._salary},\
+            {self._date_of_birth})')
 
     @property
     def salary(self):
         return self._salary
 
     @salary.setter
-    def salary(self,initial_salary):
+    def salary(self, initial_salary):
         if initial_salary < Employee.MIN_SALARY:
             raise Exception("Salary less than minimum salary")
         self._salary = initial_salary
@@ -41,7 +49,10 @@ class Employee:
         return self._salary*((100+self._salary_percentage_increment)/100)
 
     def get_age(self):
-        return datetime.today().year - datetime.strptime(self._date_of_birth, '%Y-%M-%d').date().year
+        return datetime.today().year - datetime.strptime(
+                                        self._date_of_birth,
+                                        '%Y-%M-%d').date().year
+
 
 def main():
     print("Example employee class")
@@ -49,5 +60,6 @@ def main():
     print(emp)
     print(f"The age of employee is {emp.get_age()}")
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     main()

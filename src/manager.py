@@ -1,4 +1,4 @@
-from employee import Employee
+from src.employee import Employee
 
 
 class Manager(Employee):

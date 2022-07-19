@@ -1,5 +1,7 @@
+
+
 import pytest
-from ..src.manager import Manager
+from src import manager
 
 
 class TestManagerObjectCreation:

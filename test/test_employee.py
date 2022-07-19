@@ -1,5 +1,5 @@
 import pytest
-from ..src.employee import Employee
+from src import employee
 
 
 class TestEmployeeObjectCreation:

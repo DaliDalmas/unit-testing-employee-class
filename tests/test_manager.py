@@ -17,3 +17,4 @@ class TestCreateBudgetStats:
 
     def test_create_budget_stats_on_missing_arguments(self):
         pass
+

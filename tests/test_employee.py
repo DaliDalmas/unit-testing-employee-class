@@ -28,6 +28,7 @@ class TestEmployeeObjectCreation:
     def test_employee_object_creation_on_age_greater_than_78(self):
         pass
 
+
 class TestIncreaseSalary:
 
     def test_increase_salary_on_increment_greater_than_100(self):

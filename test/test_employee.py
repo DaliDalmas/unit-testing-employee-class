@@ -13,7 +13,7 @@ class TestEmployeeObjectCreation:
     def test_employee_object_creation_on_salary_less_than_min_salary(self):
         pass
 
-    def test_employee_object_creation_on_none_integer_salary(self):
+    def test_employee_object_creation_on_wrong_argument_types(self):
         pass
 
     def test_employee_object_creation_on_missing_arguments(self):
@@ -22,16 +22,10 @@ class TestEmployeeObjectCreation:
     def test_employee_object_creation_on_proper_arguments(self):
         pass
 
-    def test_employee_object_creation_on_none_date_string(self):
-        pass
-
     def test_employee_object_creation_on_age_less_than_18(self):
         pass
 
     def test_employee_object_creation_on_age_greater_than_78(self):
-        pass
-
-    def test_employee_object_creation_on_float_salary(self):
         pass
 
 class TestIncreaseSalary:
@@ -48,10 +42,7 @@ class TestIncreaseSalary:
     def test_increase_salary_on_increment_equal_to_0(self):
         pass
 
-    def test_increase_salary_on_float_value_increment(self):
-        pass
-
-    def test_increase_salary_on_str_value_increment(self):
+    def test_increase_salary_on_wrong_argument_types(self):
         pass
 
     def test_increase_salary_on_missing_arguments(self0):

@@ -4,5 +4,8 @@ python:
 install:
   - pip install -r requirements.txt
   - export PYTHONPATH=`pwd`
+  - pip install pytest-cov codecov  # install packages from code coverage
 script:
- - pytest tests
+  - pytest --cov=src tests # point to the source direcctory
+ after_success:
+  - codecov # uploads report to codecov.io

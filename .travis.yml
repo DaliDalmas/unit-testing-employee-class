@@ -2,6 +2,7 @@ language: python
 python:
   - "3.9"
 install:
-  - pip install -e .
+  - pip install -r requirements.txt
+  - pip install .
 script:
  - pytest tests

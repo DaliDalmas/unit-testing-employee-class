@@ -7,5 +7,9 @@ install:
   - pip install pytest-cov codecov  # install packages from code coverage
 script:
   - pytest --cov=src tests # point to the source direcctory
- after_success:
-  - codecov # uploads report to codecov.io
+after_success:
+    - codecov # uploads report to codecov.io
+name: 
+    - Codecov
+uses: 
+    - codecov/codecov-action@v3.1.0

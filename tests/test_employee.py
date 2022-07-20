@@ -48,3 +48,4 @@ class TestIncreaseSalary:
 
     def test_increase_salary_on_missing_arguments(self0):
         pass
+

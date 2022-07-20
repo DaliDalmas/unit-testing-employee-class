@@ -8,5 +8,4 @@ install:
 script:
   - pytest --cov=src tests # point to the source direcctory
 after_success:
-    - name: - Codecov # uploads report to codecov.io
-    - uses: - codecov/codecov-action@v3.1.0
+  - codecov # uploads report to codecov.io

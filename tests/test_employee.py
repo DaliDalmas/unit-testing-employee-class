@@ -7,14 +7,14 @@ class TestEmployeeObjectCreation:
     def test_employee_object_creation_on_negative_salary(self):
         with pytest.raises(ValueError):
             emp = employee.Employee('Anna', 'Mary', 'Nakato', -20000, '1995-07-17')
-        
 
     def test_employee_object_creation_on_salary_equals_zero(self):
         with pytest.raises(ValueError):
             emp = employee.Employee('Anna', 'Mary', 'Nakato', 0, '1995-07-17')
 
     def test_employee_object_creation_on_salary_less_than_min_salary(self):
-        pass
+        with pytest.raises(ValueError):
+            emp = employee.Employee('Anna', 'Mary', 'Nakato', 2980, '1995-07-17')
 
     def test_employee_object_creation_on_wrong_argument_types(self):
         pass

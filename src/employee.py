@@ -16,6 +16,11 @@ class Employee:
         self._salary: int = initial_salary
         self._date_of_birth: str = dob
 
+        if self._salary<0:
+            raise ValueError("Salary cannot be negative!")
+        elif self._salary < Employee.MIN_SALARY:
+            raise ValueError("Salary cannot be less than minimum salary")
+
     def __str__(self):
         return f"""
         Employee

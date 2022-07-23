@@ -20,6 +20,15 @@ class Employee:
             raise ValueError("Salary cannot be negative!")
         elif self._salary < Employee.MIN_SALARY:
             raise ValueError("Salary cannot be less than minimum salary")
+        
+        if type(self.first_name)!=str or type(self.middle_name)!=str or type(self.sur_name)!=str :
+            message = f"""
+            One of the names is of a type not string:
+            first name type = {type(self.first_name)}
+            middle name type = {type(self.first_name)}
+            last name type = {type(self.first_name)}
+            """
+            raise TypeError(message)
 
     def __str__(self):
         return f"""

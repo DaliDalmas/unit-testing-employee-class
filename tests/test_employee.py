@@ -17,7 +17,16 @@ class TestEmployeeObjectCreation:
             emp = employee.Employee('Anna', 'Mary', 'Nakato', 2980, '1995-07-17')
 
     def test_employee_object_creation_on_wrong_argument_types(self):
-        pass
+        # test first name on type not string
+        with pytest.raises(TypeError):
+            emp = employee.Employee(10, 'Mary', 'Nakato', 10000, '1995-07-17')
+        # test middle name on type not string
+        with pytest.raises(TypeError):
+            emp = employee.Employee('Anna', 909, 'Nakato', 10000, '1995-07-17')
+        # test last name on type not string
+        # test salary on tyoe not int or float
+        # test date on type not string
+
 
     def test_employee_object_creation_on_missing_arguments(self):
         pass

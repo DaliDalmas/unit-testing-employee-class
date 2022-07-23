@@ -3,6 +3,7 @@ from datetime import datetime
 
 class Employee:
     """
+    This class creates employee object.
     """
 
     MIN_SALARY: int = 3000
@@ -30,13 +31,23 @@ class Employee:
             """
             raise TypeError(message)
 
-        if type(self._salary)!=int or type(self._salary)!=float:
+        if ~isinstance(self._salary, int):
+            pass
+        elif ~isinstance(self._salary, float):
+            pass
+        else:
             message = f"Salary type is neither integer nor float, salary type = {type(self._salary)}"
             raise TypeError(message)
 
         if type(self._date_of_birth)!=str:
             message = f"Date of bith should be a string but you supplied {type(self._date_of_birth)}"
             raise TypeError(message)
+
+        if datetime.today().year - datetime.strptime(self._date_of_birth,'%Y-%M-%d').date().year < 18:
+            raise AttributeError("Employee cannot be a minor!")
+
+        if datetime.today().year - datetime.strptime(self._date_of_birth,'%Y-%M-%d').date().year > 78:
+            raise AttributeError("Employee is pass retirement age.")
 
     def __str__(self):
         return f"""

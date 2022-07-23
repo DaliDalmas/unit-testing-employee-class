@@ -1,7 +1,6 @@
 import pytest
 from src import employee
 
-
 class TestEmployeeObjectCreation:
 
     def test_employee_object_creation_on_negative_salary(self):
@@ -33,17 +32,22 @@ class TestEmployeeObjectCreation:
         with pytest.raises(TypeError):
             emp = employee.Employee('Anna', 'Mary', 'Nakato', 10000, 1995)
 
-    def test_employee_object_creation_on_missing_arguments(self):
-        pass
-
     def test_employee_object_creation_on_proper_arguments(self):
-        pass
+        emp = employee.Employee('Anna', 'Mary', 'Nakato', 4000, '1995-07-17')
+        assert emp.first_name == 'Anna'
+        assert emp.middle_name == 'Mary'
+        assert emp.sur_name == 'Nakato'
+        assert emp._salary == 4000
+        assert emp._date_of_birth == '1995-07-17'
 
     def test_employee_object_creation_on_age_less_than_18(self):
-        pass
+        with pytest.raises(AttributeError):
+            emp = employee.Employee('Anna', 'Mary', 'Nakato', 4000, '2015-07-17')
+        
 
     def test_employee_object_creation_on_age_greater_than_78(self):
-        pass
+        with pytest.raises(AttributeError):
+            emp = employee.Employee('Anna', 'Mary', 'Nakato', 4000, '1940-07-17')
 
 
 class TestIncreaseSalary:

@@ -30,6 +30,14 @@ class Employee:
             """
             raise TypeError(message)
 
+        if type(self._salary)!=int or type(self._salary)!=float:
+            message = f"Salary type is neither integer nor float, salary type = {type(self._salary)}"
+            raise TypeError(message)
+
+        if type(self._date_of_birth)!=str:
+            message = f"Date of bith should be a string but you supplied {type(self._date_of_birth)}"
+            raise TypeError(message)
+
     def __str__(self):
         return f"""
         Employee

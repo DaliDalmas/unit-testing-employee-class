@@ -16,6 +16,7 @@ class Employee:
         self.sur_name: str = sur_name
         self._salary: int = initial_salary
         self._date_of_birth: str = dob
+        self.minimum_increment: int = 5
 
         if self._salary<0:
             raise ValueError("Salary cannot be negative!")
@@ -79,6 +80,21 @@ class Employee:
         self._salary = initial_salary
 
     def increase_salary(self, increment: float):
+        if isinstance(increment, int):
+            pass
+        elif isinstance(increment, float):
+            pass
+        else:
+            raise ValueError("The type of increment is wrong")
+ 
+        if increment<0:
+            raise AttributeError("Salary increment cannot be less than 0")
+        elif increment<self.minimum_increment:
+            raise AttributeError("Minimum salary increment cannot be less than 5%")
+
+        if increment>100:
+            increment=100
+
         return self._salary*((100+increment)/100)
 
     def get_age(self):

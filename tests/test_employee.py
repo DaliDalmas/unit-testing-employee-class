@@ -53,20 +53,21 @@ class TestEmployeeObjectCreation:
 class TestIncreaseSalary:
 
     def test_increase_salary_on_increment_greater_than_100(self):
-        pass
+        emp = employee.Employee('Anna', 'Mary', 'Nakato', 10000, '1995-07-17')
+        assert emp.increase_salary(110)==20000
 
     def test_increase_salary_on_increment_less_than_0(self):
-        pass
+        emp = employee.Employee('Anna', 'Mary', 'Nakato', 10000, '1995-07-17')
+        with pytest.raises(AttributeError):
+            emp.increase_salary(-10)
 
-    def test_increase_salary_on_increment_equal_to_5(self):
-        pass
-
-    def test_increase_salary_on_increment_equal_to_0(self):
-        pass
+    def test_increase_salary_on_increment_less_than_minimum_increment(self):
+        emp = employee.Employee('Anna', 'Mary', 'Nakato', 10000, '1995-07-17')
+        with pytest.raises(AttributeError):
+            emp.increase_salary(4)
 
     def test_increase_salary_on_wrong_argument_types(self):
-        pass
-
-    def test_increase_salary_on_missing_arguments(self0):
-        pass
+        emp = employee.Employee('Anna', 'Mary', 'Nakato', 10000, '1995-07-17')
+        with pytest.raises(ValueError):
+            emp.increase_salary('something')
 

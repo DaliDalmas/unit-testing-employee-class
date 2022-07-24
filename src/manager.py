@@ -3,7 +3,7 @@ from src.employee import Employee
 
 class Manager(Employee):
     """
-    
+    This is a manager class that inherits properties of employee class
     """
 
     def __init__(self, first_name: str, middle_name: str, sur_name: str, initial_salary: int, dob: str,

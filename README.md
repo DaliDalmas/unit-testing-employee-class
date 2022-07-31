@@ -8,3 +8,4 @@ After learning unit testing with pytest I decided to owrk on this project.
 To install, clone the repo, then install the requirements on a virtual environment. Can then run pytest on terminal to see feature tests. 
 
 Please checkout the youtube video on how I build the unit tests.
+https://www.youtube.com/watch?v=XOsxKkoQaUY&ab_channel=DaliCodes
